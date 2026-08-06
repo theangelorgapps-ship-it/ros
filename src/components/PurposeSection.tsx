@@ -68,7 +68,7 @@ export default function PurposeSection() {
   return (
     <section
       id="purpose"
-      className="relative z-10 flex flex-col border-t border-white/10 px-5 py-20 text-white sm:px-8 sm:py-24 md:px-10 md:py-32"
+      className="relative z-10 flex scroll-mt-24 flex-col border-t border-white/10 px-5 py-20 text-white sm:px-8 sm:py-24 md:px-10 md:py-32"
     >
       <FadeIn as="header" className="mb-16 w-full text-center sm:mb-20 md:mb-28" delay={0} y={40}>
         <h2 className="w-full text-[clamp(3rem,9vw,6rem)] font-semibold leading-[1.04] tracking-[-0.03em] text-white">

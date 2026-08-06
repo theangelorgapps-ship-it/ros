@@ -1,5 +1,5 @@
 import { useMemo, type CSSProperties, type ReactNode } from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion, useReducedMotion, type Variants } from 'framer-motion';
 
 type FadeInProps = {
   as?: keyof React.JSX.IntrinsicElements;
@@ -8,7 +8,6 @@ type FadeInProps = {
   delay?: number;
   duration?: number;
   style?: CSSProperties;
-  x?: number;
   y?: number;
 };
 
@@ -19,20 +18,20 @@ export default function FadeIn({
   delay = 0,
   duration = 0.7,
   style,
-  x = 0,
   y = 30,
 }: FadeInProps) {
   const MotionElement = useMemo(() => motion.create(as), [as]);
+  const reduceMotion = useReducedMotion();
 
   const variants: Variants = {
-    hidden: { opacity: 0, x, y },
-    visible: { opacity: 1, x: 0, y: 0 },
+    hidden: { opacity: 0, y: reduceMotion ? 0 : y },
+    visible: { opacity: 1, y: 0 },
   };
 
   return (
     <MotionElement
       className={className}
-      initial="hidden"
+      initial={reduceMotion ? false : 'hidden'}
       style={style}
       transition={{ delay, duration, ease: [0.25, 0.1, 0.25, 1] }}
       variants={variants}

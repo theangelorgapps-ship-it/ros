@@ -2,10 +2,11 @@ import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { SKOOL_URL } from '../constants/links';
 import { HERO_VIDEO_URL } from '../constants/media';
+import { HeroDesktopNavigation } from './Header';
 
 export default function HeroSection() {
   return (
-    <div id="home" className="relative flex h-[100svh] scroll-mt-28 flex-col overflow-hidden p-2.5 font-sans text-white sm:p-3 md:h-[100dvh] md:scroll-mt-24 md:p-6 lg:p-8">
+    <div id="home" className="relative flex min-h-[100svh] scroll-mt-28 flex-col overflow-hidden p-2.5 font-sans text-white sm:p-3 md:min-h-[100dvh] md:scroll-mt-24 md:p-6 lg:p-8">
       {/* Ambient Glow / Light Leaks */}
       <div className="pointer-events-none absolute left-1/4 top-[-10%] h-[50vh] w-1/2 rounded-full bg-[#cf1c1c]/15 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-[-10%] right-1/4 h-[50vh] w-1/2 rounded-full bg-[#cf1c1c]/10 blur-[120px]" />
@@ -15,7 +16,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-        className="relative z-10 w-full flex-1 overflow-hidden rounded-2xl border border-white/10 shadow-[0_0_80px_rgba(207,28,28,0.1)]"
+        className="relative z-10 min-h-[calc(100svh-1.25rem)] w-full flex-1 overflow-hidden rounded-2xl border border-white/10 min-[560px]:min-h-[calc(100svh-6.25rem)] md:min-h-[calc(100dvh-8rem)] lg:min-h-[calc(100dvh-9rem)]"
       >
         <video
           autoPlay
@@ -62,6 +63,7 @@ export default function HeroSection() {
         </main>
       </motion.div>
       {/* Background Video Frame End */}
+      <HeroDesktopNavigation />
     </div>
   );
 }

@@ -84,7 +84,7 @@ export default function PartnerSection({ images }: PartnerSectionProps) {
               isInView ? 'animate-fade-in-up' : ''
             }`}
             style={{
-              fontFamily: "'Plus Jakarta Sans', 'Inter', sans-serif",
+              fontFamily: "'Geist', sans-serif",
               animationDelay: isInView ? '0.1s' : '0s',
             }}
           >

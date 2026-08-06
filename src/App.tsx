@@ -4,7 +4,7 @@
  */
 
 import { useState } from 'react';
-import { AnimatePresence } from 'motion/react';
+import { AnimatePresence, MotionConfig } from 'motion/react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ScrollImageMarquee from './components/ScrollImageMarquee';
@@ -34,7 +34,7 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <AnimatePresence mode="wait">
         {loading && <LayoutPreloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
@@ -60,6 +60,6 @@ export default function App() {
           <BackToTopButton />
         </div>
       </div>
-    </>
+    </MotionConfig>
   );
 }

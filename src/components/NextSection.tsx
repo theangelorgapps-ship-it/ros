@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Typewriter from './Typewriter';
@@ -26,37 +26,23 @@ const feedbacks = [
 
 export default function NextSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
 
   const nextSlide = () => {
-    setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % feedbacks.length);
   };
 
   const prevSlide = () => {
-    setDirection(-1);
     setCurrentIndex((prevIndex) => (prevIndex - 1 + feedbacks.length) % feedbacks.length);
   };
 
   const variants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 100 : -100,
-        opacity: 0
-      };
-    },
+    enter: { y: 12, opacity: 0 },
     center: {
       zIndex: 1,
-      x: 0,
+      y: 0,
       opacity: 1
     },
-    exit: (direction: number) => {
-      return {
-        zIndex: 0,
-        x: direction < 0 ? 100 : -100,
-        opacity: 0
-      };
-    }
+    exit: { zIndex: 0, y: -12, opacity: 0 }
   };
 
   return (
@@ -90,16 +76,15 @@ export default function NextSection() {
           variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } } }}
           className="relative overflow-hidden min-h-[300px] md:min-h-[250px] flex items-center"
         >
-          <AnimatePresence initial={false} custom={direction} mode="wait">
+          <AnimatePresence initial={false} mode="wait">
             <motion.div
               key={currentIndex}
-              custom={direction}
               variants={variants}
               initial="enter"
               animate="center"
               exit="exit"
               transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
+                y: { duration: 0.22, ease: [0.22, 1, 0.36, 1] },
                 opacity: { duration: 0.2 }
               }}
               className="w-full"

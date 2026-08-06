@@ -1,10 +1,7 @@
 import { Facebook, Instagram, Music2, Twitter, Youtube } from 'lucide-react';
 import { motion } from 'motion/react';
 import { NAV_ITEMS, SOCIAL_LINKS } from '../constants/links';
-
-const scrollToSection = (target: string) => {
-  document.getElementById(target)?.scrollIntoView({ behavior: 'smooth' });
-};
+import { navigateToSection } from '../utils/navigation';
 
 const socials = [
   { label: 'X', href: SOCIAL_LINKS.x, Icon: Twitter },
@@ -26,11 +23,8 @@ export default function Footer() {
       >
         <div className="flex flex-col items-center gap-4 md:items-start">
           <a
-            href="#home"
-            onClick={(event) => {
-              event.preventDefault();
-              scrollToSection('home');
-            }}
+            href={NAV_ITEMS[0].href}
+            onClick={(event) => navigateToSection(event, 'home')}
             className="text-[28px] font-semibold leading-[0.92] tracking-[-0.035em] text-white transition-opacity hover:opacity-75"
           >
             The Realm
@@ -48,11 +42,8 @@ export default function Footer() {
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.target}
-                href={`#${item.target}`}
-                onClick={(event) => {
-                  event.preventDefault();
-                  scrollToSection(item.target);
-                }}
+                href={item.href}
+                onClick={(event) => navigateToSection(event, item.target)}
                 className="text-sm text-white/70 transition-colors hover:text-white"
               >
                 {item.label}

@@ -8,11 +8,11 @@
   --color-stroke: #1a1818;
   --color-panel: #16161a;
   --color-accent: #cf1c1c;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-dm-serif: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-playfair: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-almarai: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-dm-serif: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-playfair: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-almarai: "Geist", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
@@ -28,7 +28,12 @@
   body {
     background: #000000;
     color: #ffffff;
-    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
+    overflow-x: clip;
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   h1,
@@ -37,7 +42,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
     text-wrap: balance;
   }
 
@@ -226,11 +231,11 @@
 
 @keyframes realm-aurora-drift {
   from {
-    transform: translate3d(-2.5%, -1.5%, 0) scale(0.98);
+    transform: translate3d(0, -1.5%, 0) scale(0.98);
   }
 
   to {
-    transform: translate3d(2.5%, 1.5%, 0) scale(1.04);
+    transform: translate3d(0, 1.5%, 0) scale(1.04);
   }
 }
 
@@ -275,6 +280,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .realm-aurora-field::after {
     animation: none;
   }

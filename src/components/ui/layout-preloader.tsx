@@ -92,7 +92,7 @@ export default function LayoutPreloader({
             <h1 className="mt-2 text-white drop-shadow-[0_4px_30px_rgba(0,0,0,0.9)]">
               <span
                 className="block text-[clamp(3rem,9vw,7.25rem)] italic leading-[0.88] tracking-[-0.055em]"
-                style={{ fontFamily: 'Georgia, Times New Roman, serif' }}
+                style={{ fontFamily: "'Geist', sans-serif" }}
               >
                 Realm Of
               </span>
