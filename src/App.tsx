@@ -8,6 +8,7 @@ import { AnimatePresence } from 'motion/react';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
 import ScrollImageMarquee from './components/ScrollImageMarquee';
+import PurposeSection from './components/PurposeSection';
 import AboutSection from './components/AboutSection';
 import PricingSection from './components/PricingSection';
 import LogoMarquee from './components/LogoMarquee';
@@ -35,6 +36,7 @@ export default function App() {
         <Header />
         <HeroSection />
         <ScrollImageMarquee />
+        <PurposeSection />
         <AboutSection />
         <PricingSection />
         <LogoMarquee />
