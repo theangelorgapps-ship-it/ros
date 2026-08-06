@@ -68,10 +68,10 @@ export default function PurposeSection() {
   return (
     <section
       id="purpose"
-      className="relative z-10 flex flex-col rounded-t-[40px] border-t border-white/10 bg-[#0C0C0C] px-5 py-20 text-white sm:rounded-t-[50px] sm:px-8 sm:py-24 md:rounded-t-[60px] md:px-10 md:py-32"
+      className="relative z-10 flex flex-col border-t border-white/10 px-5 py-20 text-white sm:px-8 sm:py-24 md:px-10 md:py-32"
     >
       <FadeIn as="header" className="mb-16 w-full text-center sm:mb-20 md:mb-28" delay={0} y={40}>
-        <h2 className="w-full text-[clamp(3rem,12vw,160px)] font-black uppercase leading-none tracking-tight text-white">
+        <h2 className="w-full text-[clamp(3rem,9vw,6rem)] font-semibold leading-[1.04] tracking-[-0.03em] text-white">
           The Purpose of the Realm
         </h2>
         <p className="mx-auto mt-6 max-w-3xl text-[clamp(1rem,2vw,1.5rem)] font-light leading-relaxed text-white/60 sm:mt-8">

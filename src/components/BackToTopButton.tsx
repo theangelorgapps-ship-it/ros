@@ -34,7 +34,7 @@ export default function BackToTopButton() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 18 }}
           transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
-          onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
           className="fixed bottom-5 right-5 z-[80] inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/15 bg-white text-black shadow-[0_12px_35px_rgba(0,0,0,0.35)] transition hover:-translate-y-0.5 hover:bg-white/90 md:bottom-8 md:right-8"
         >
           <ArrowUp className="h-5 w-5" />

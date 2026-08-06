@@ -1,47 +1,59 @@
 import { motion } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
+import { SKOOL_URL } from '../constants/links';
 
-const PORTRAIT_URL =
-  'https://assets.cdn.filesafe.space/BGA1N9Ch7TNCoNH77QrT/media/6a74dd7488808720190e073b.png';
-
-const COMMUNITY_URL = 'https://uuweua6rp4gx1nei2kim.app.clientclub.net/';
+const PORTRAIT_URL = '/seer-portrait-aurora.png';
 
 export default function PricingSection() {
   return (
     <section
-      id="connect"
+      id="about"
       aria-labelledby="seer-biography-title"
-      className="relative isolate flex min-h-screen w-full items-center overflow-hidden bg-black text-white"
+      className="relative flex min-h-screen w-full scroll-mt-20 items-center overflow-hidden text-white md:scroll-mt-24"
     >
-      <img
-        src={PORTRAIT_URL}
-        alt="Uebert Angel Jr teaching"
-        loading="lazy"
-        className="absolute inset-0 -z-20 h-full w-full object-cover object-[61%_center] opacity-65 sm:opacity-80 md:object-center md:opacity-100"
-      />
+      <div className="mx-auto grid w-full max-w-[1600px] grid-cols-1 items-center gap-12 px-6 py-24 sm:px-8 sm:py-28 md:px-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.82fr)] lg:gap-16 lg:px-16 lg:py-32 xl:gap-24 xl:px-20">
+        <motion.h2
+          id="seer-biography-title"
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
+          className="max-w-[720px] text-[clamp(2.2rem,4.6vw,4.8rem)] font-semibold leading-[1.04] tracking-[-0.03em] text-white lg:col-start-1 lg:row-start-1 lg:self-end"
+        >
+          More Than a Teacher
+          <span className="mt-2 block text-white/76">A Guide Into Deeper Sight</span>
+        </motion.h2>
 
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.72)_58%,rgba(0,0,0,0.38)_100%)] md:bg-[linear-gradient(90deg,#000_0%,rgba(0,0,0,0.97)_26%,rgba(0,0,0,0.78)_52%,rgba(0,0,0,0.08)_78%,rgba(0,0,0,0)_100%)]" />
+        <figure className="relative isolate aspect-[3/2] w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[4/5] lg:max-h-[760px] lg:justify-self-end">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -inset-12 -z-10 blur-[64px]"
+            style={{
+              background:
+                'radial-gradient(circle at 62% 50%, rgba(207, 28, 28, 0.34), transparent 68%)',
+            }}
+          />
+          <img
+            src={PORTRAIT_URL}
+            alt="Uebert Angel Jr teaching"
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover object-center lg:object-[64%_center]"
+            style={{
+              WebkitMaskImage:
+                'radial-gradient(ellipse 78% 82% at 62% 48%, black 48%, transparent 100%)',
+              maskImage:
+                'radial-gradient(ellipse 78% 82% at 62% 48%, black 48%, transparent 100%)',
+            }}
+          />
+        </figure>
 
-      <div className="mx-auto flex w-full max-w-[1500px] px-6 py-28 sm:px-8 sm:py-32 md:px-12 lg:px-16 xl:px-20">
-        <div className="w-full max-w-[680px]">
-          <motion.h2
-            id="seer-biography-title"
-            initial={{ opacity: 0, y: 28 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="max-w-[640px] text-[clamp(2.8rem,6.6vw,6.5rem)] font-medium leading-[0.96] tracking-[-0.045em] text-white"
-          >
-            More Than a Teacher
-            <span className="mt-2 block text-white/76">A Guide Into Deeper Sight</span>
-          </motion.h2>
-
+        <div className="w-full max-w-[700px] lg:col-start-1 lg:row-start-2 lg:self-start">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-            className="mt-9 space-y-5 text-[clamp(1rem,1.35vw,1.2rem)] font-light leading-[1.65] text-white/68 sm:mt-11"
+            className="max-w-[680px] space-y-5 text-[clamp(1rem,1.25vw,1.18rem)] font-light leading-[1.65] text-white/68"
           >
             <p>
               From his earliest days, destiny was not improvised but cultivated. Under the prophetic leadership of Prophet Angel, the life of The Seer was deliberately formed through discipline, revelation, and the quiet burden of legacy, refined for divine purpose rather than public applause.
@@ -57,7 +69,7 @@ export default function PricingSection() {
           </motion.div>
 
           <motion.a
-            href={COMMUNITY_URL}
+            href={SKOOL_URL}
             target="_blank"
             rel="noreferrer"
             initial={{ opacity: 0, y: 20 }}

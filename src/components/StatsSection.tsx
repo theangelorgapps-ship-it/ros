@@ -32,7 +32,7 @@ export default function StatsSection() {
   const activeContent = content[activeTab];
 
   return (
-    <section id="about" className="stats" aria-labelledby="stats-title">
+    <section id="community" className="stats" aria-labelledby="stats-title">
       <header className="stats__header">
         <div className="stats__title-wrap">
           <h2 id="stats-title">Gain Access To The Community</h2>

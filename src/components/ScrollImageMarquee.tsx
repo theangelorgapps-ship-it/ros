@@ -85,7 +85,7 @@ export default function ScrollImageMarquee() {
     <section
       ref={sectionRef}
       aria-label="Featured Uebert Angel Jr teachings"
-      className="w-full overflow-hidden bg-[#0C0C0C] pb-8 pt-16 sm:pb-10 sm:pt-24 md:pt-32 lg:pt-40"
+      className="w-full overflow-hidden pb-8 pt-16 sm:pb-10 sm:pt-24 md:pt-32 lg:pt-40"
     >
       <div className="flex flex-col gap-3">
         <div className="w-full overflow-hidden">

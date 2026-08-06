@@ -1,11 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Video } from 'lucide-react';
+import { SKOOL_URL } from '../constants/links';
 
 const FEATURE_IMAGE =
   'https://assets.cdn.filesafe.space/BGA1N9Ch7TNCoNH77QrT/media/6a74ce5c6da442d0adbd3f7c.jpg';
-
-const JOIN_URL = 'https://uuweua6rp4gx1nei2kim.app.clientclub.net/';
 
 const sermons = [
   {
@@ -52,8 +50,11 @@ function SermonItem({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.45, delay: index * 0.07 }}
-      className="group grid grid-cols-[80px_minmax(0,1fr)] items-center gap-3 rounded-xl transition-colors hover:bg-white/[0.045] xl:grid-cols-[112px_minmax(0,1fr)] xl:gap-4"
+      className="group grid grid-cols-[20px_72px_minmax(0,1fr)] items-center gap-3 rounded-xl transition-colors hover:bg-white/[0.045] xl:grid-cols-[24px_104px_minmax(0,1fr)] xl:gap-4"
     >
+      <span className="self-start pt-1 text-sm font-medium tabular-nums text-white/55 xl:text-base">
+        {index + 1}.
+      </span>
       <div className="aspect-square overflow-hidden rounded-lg bg-[#262424]">
         <img
           src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
@@ -91,7 +92,7 @@ function CommunityCard() {
         exclusive content
       </p>
       <a
-        href={JOIN_URL}
+        href={SKOOL_URL}
         target="_blank"
         rel="noreferrer"
         className="group mt-3 inline-flex h-[43px] min-w-[122px] items-center justify-center gap-2 rounded-[10px] bg-white px-5 text-[16px] font-medium text-black transition-transform duration-300 hover:-translate-y-1 xl:mt-7 xl:h-16 xl:min-w-[195px] xl:rounded-2xl xl:px-8 xl:text-2xl"
@@ -107,7 +108,7 @@ function SermonsCard() {
     <motion.aside
       {...reveal}
       transition={{ ...reveal.transition, delay: 0.08 }}
-      className="rounded-[12px] bg-[#1d1b1b] px-[30px] py-[30px] md:px-5 xl:rounded-[22px] xl:px-8 xl:py-10"
+      className="rounded-[12px] bg-[#1d1b1b] px-[30px] py-[30px] md:px-5 xl:rounded-2xl xl:px-8 xl:py-10"
     >
       <h3 className="mb-7 text-[20px] font-normal tracking-[-0.02em] text-white xl:mb-8 xl:text-[2rem]">
         Top 10 New Sermons
@@ -122,61 +123,11 @@ function SermonsCard() {
 }
 
 export default function CtaSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const featureRef = useRef<HTMLElement>(null);
-  const [showCompactHeader, setShowCompactHeader] = useState(false);
-
-  useEffect(() => {
-    const updateHeader = () => {
-      const section = sectionRef.current;
-      const feature = featureRef.current;
-      if (!section || !feature) return;
-
-      const sectionRect = section.getBoundingClientRect();
-      const featureRect = feature.getBoundingClientRect();
-      const sectionIsActive = sectionRect.top <= 1 && sectionRect.bottom > 1;
-
-      document.body.classList.toggle('realm-section-active', sectionIsActive);
-      setShowCompactHeader(
-        sectionIsActive && window.innerWidth < 768 && featureRect.bottom <= 72,
-      );
-    };
-
-    updateHeader();
-    window.addEventListener('scroll', updateHeader, { passive: true });
-    window.addEventListener('resize', updateHeader);
-
-    return () => {
-      window.removeEventListener('scroll', updateHeader);
-      window.removeEventListener('resize', updateHeader);
-      document.body.classList.remove('realm-section-active');
-    };
-  }, []);
-
   return (
-    <section ref={sectionRef} id="cta" className="relative overflow-hidden bg-black text-white">
-      <motion.div
-        initial={false}
-        animate={{ opacity: showCompactHeader ? 1 : 0, y: showCompactHeader ? 0 : -16 }}
-        transition={{ duration: 0.25 }}
-        aria-hidden={!showCompactHeader}
-        className={`fixed inset-x-0 top-0 z-[60] flex h-16 items-center justify-between bg-black/75 px-9 text-white backdrop-blur-xl md:hidden ${showCompactHeader ? 'pointer-events-auto' : 'pointer-events-none'}`}
-      >
-        <span className="text-[23px] font-normal leading-[0.95] tracking-[-0.03em]">
-          The Realm
-          <br />
-          Of Seers
-        </span>
-        <span aria-hidden="true" className="flex w-6 flex-col gap-1.5">
-          <span className="h-px w-full bg-white" />
-          <span className="h-px w-full bg-white" />
-          <span className="h-px w-full bg-white" />
-        </span>
-      </motion.div>
-
+    <section id="featured" className="relative scroll-mt-28 overflow-hidden text-white md:scroll-mt-24">
       <div className="mx-auto grid w-full max-w-[2048px] grid-cols-1 gap-[52px] px-5 pb-14 pt-[27px] md:grid-cols-[minmax(0,1fr)_300px] md:gap-6 md:px-6 md:pb-0 md:pt-[27px] xl:grid-cols-[minmax(0,1fr)_430px] xl:gap-8 xl:px-12">
         <div className="min-w-0">
-          <motion.figure ref={featureRef} {...reveal} className="overflow-hidden rounded-[16px] bg-[#111] md:rounded-t-none xl:rounded-[22px] xl:rounded-t-none">
+          <motion.figure {...reveal} className="overflow-hidden rounded-2xl bg-[#111] md:rounded-t-none xl:rounded-2xl xl:rounded-t-none">
             <img
               src={FEATURE_IMAGE}
               alt="The Seer in conversation overlooking the city"
@@ -185,28 +136,29 @@ export default function CtaSection() {
           </motion.figure>
 
           <motion.div {...reveal} transition={{ ...reveal.transition, delay: 0.08 }} className="pt-[30px] sm:pt-8 xl:pt-14">
-            <h2 className="text-[28px] font-normal leading-[1.15] tracking-[-0.04em] text-white sm:text-4xl xl:text-[3.55rem] xl:leading-[1.04]">
+            <h2 className="text-[clamp(1.65rem,4.5vw,3.1rem)] font-normal leading-[1.12] tracking-[-0.03em] text-white">
               Ep.1 - Why? (The Seer Podcast)
             </h2>
-            <p className="mt-5 max-w-[1480px] text-[20px] font-light leading-[1.28] text-white/70 md:text-lg xl:mt-7 xl:text-[2rem] xl:leading-[1.3]">
+            <p className="mt-4 max-w-[72ch] text-base font-light leading-[1.55] text-white/72 sm:text-[17px] md:text-lg xl:mt-6 xl:text-[1.35rem] xl:leading-[1.5]">
               Enter a curated world of revelation, depth, and spiritual mastery. Explore powerful message topics ranging from mastery over prayer and GodKind faith to platform exclusive episodes from the new Seer Podcast.
             </p>
 
-            <div aria-hidden="true" className="relative mt-6 h-[204px] overflow-hidden md:h-32 xl:mt-8 xl:h-40">
-              <p className="text-[18px] font-light leading-[1.45] text-white/55 blur-[5px] md:text-base xl:text-[1.75rem]">
+            <div className="relative mt-6 h-[204px] overflow-hidden rounded-xl bg-black/35 md:h-36 xl:mt-8 xl:h-44">
+              <div aria-hidden="true" className="absolute inset-0 overflow-hidden px-1 pt-1">
+              <p className="text-base font-light leading-[1.5] text-white/55 blur-[5px] md:text-[17px] xl:text-xl">
                 Journey deeper into the Word with teaching created to strengthen your faith, renew your mind, and sharpen your understanding of the supernatural life in Christ. Every message is selected to create room for reflection, revelation, and lasting transformation.
               </p>
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/35 to-black" />
+              </div>
+              <a
+                href={SKOOL_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="absolute bottom-5 left-5 z-10 inline-flex h-[54px] w-[225px] items-center justify-center rounded-[10px] bg-white text-[16px] font-medium text-black shadow-[0_4px_8px_rgba(0,0,0,0.3)] transition-colors duration-200 hover:bg-[#cf1c1c] hover:text-white"
+              >
+                Enter the Realm
+              </a>
             </div>
-
-            <a
-              href={JOIN_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="-mt-[108px] inline-flex h-[54px] w-[225px] items-center justify-center rounded-[10px] bg-white text-[16px] font-medium text-black transition-transform duration-300 hover:-translate-y-1 md:mt-6 xl:mt-8"
-            >
-              Enter the Realm
-            </a>
           </motion.div>
         </div>
 

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Player } from '@lottiefiles/react-lottie-player';
 import Typewriter from './Typewriter';
+import { SKOOL_URL } from '../constants/links';
 
 export default function ImageSection() {
   return (
@@ -25,7 +26,7 @@ export default function ImageSection() {
           </h2>
           
           <button 
-            onClick={() => window.open('https://uuweua6rp4gx1nei2kim.app.clientclub.net/', '_blank')}
+            onClick={() => window.open(SKOOL_URL, '_blank')}
             className="c3-btn-gold-large mt-7 md:mt-8"
           >
             <span>Join Now</span>

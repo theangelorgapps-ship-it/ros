@@ -7,19 +7,27 @@
   --color-stroke: #1a1818;
   --color-panel: #16161a;
   --color-accent: #cf1c1c;
-  --font-sans: "Kanit", ui-sans-serif, system-ui, sans-serif;
-  --font-dm-serif: "Kanit", ui-sans-serif, system-ui, sans-serif;
-  --font-playfair: "Kanit", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Kanit", ui-sans-serif, system-ui, sans-serif;
-  --font-almarai: "Kanit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-dm-serif: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-playfair: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-almarai: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer base {
+  :root {
+    --realm-red: #cf1c1c;
+    --realm-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --realm-motion-fast: 180ms;
+    --realm-motion-standard: 500ms;
+    --realm-motion-slow: 900ms;
+  }
+
   html,
   body {
     background: #000000;
     color: #ffffff;
-    font-family: "Kanit", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
   }
 
   h1,
@@ -28,8 +36,53 @@
   h4,
   h5,
   h6 {
-    font-family: "Kanit", ui-sans-serif, system-ui, sans-serif;
+    font-family: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+    text-wrap: balance;
   }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.realm-page {
+  isolation: isolate;
+  background: #000;
+}
+
+.realm-page-content {
+  position: relative;
+  z-index: 1;
+}
+
+.realm-aurora-field {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 38rem 32rem at 14% 7%, rgb(207 28 28 / 0.26) 0%, rgb(207 28 28 / 0.08) 48%, transparent 74%),
+    radial-gradient(ellipse 34rem 30rem at 88% 19%, rgb(207 28 28 / 0.22) 0%, rgb(207 28 28 / 0.07) 46%, transparent 74%),
+    radial-gradient(ellipse 40rem 34rem at 13% 32%, rgb(207 28 28 / 0.25) 0%, rgb(207 28 28 / 0.08) 46%, transparent 74%),
+    radial-gradient(ellipse 38rem 32rem at 84% 44%, rgb(207 28 28 / 0.2) 0%, rgb(207 28 28 / 0.06) 46%, transparent 74%),
+    radial-gradient(ellipse 42rem 36rem at 20% 57%, rgb(207 28 28 / 0.24) 0%, rgb(207 28 28 / 0.07) 46%, transparent 74%),
+    radial-gradient(ellipse 38rem 32rem at 89% 70%, rgb(207 28 28 / 0.22) 0%, rgb(207 28 28 / 0.06) 46%, transparent 74%),
+    radial-gradient(ellipse 40rem 34rem at 15% 84%, rgb(207 28 28 / 0.22) 0%, rgb(207 28 28 / 0.07) 46%, transparent 74%),
+    radial-gradient(ellipse 36rem 30rem at 78% 97%, rgb(207 28 28 / 0.24) 0%, rgb(207 28 28 / 0.07) 46%, transparent 74%),
+    #000;
+}
+
+.realm-aurora-field::after {
+  position: fixed;
+  inset: -20vh -14vw;
+  content: "";
+  background:
+    radial-gradient(circle at 18% 35%, rgb(207 28 28 / 0.16) 0%, transparent 28%),
+    radial-gradient(circle at 82% 66%, rgb(207 28 28 / 0.14) 0%, transparent 28%);
+  filter: blur(64px);
+  will-change: transform;
+  animation: realm-aurora-drift 18s ease-in-out infinite alternate;
 }
 
 @layer components {
@@ -37,8 +90,8 @@
     background: #ffffff;
     color: #000000;
     border-radius: 10px;
-    border: 1px solid #ffffff;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+    border: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.28);
     cursor: pointer;
     transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
     position: relative;
@@ -95,8 +148,39 @@
   }
 }
 
-body.realm-section-active .site-header {
-  opacity: 0 !important;
-  pointer-events: none;
-  transform: translateY(-12px) !important;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes realm-aurora-drift {
+  from {
+    transform: translate3d(-2.5%, -1.5%, 0) scale(0.98);
+  }
+
+  to {
+    transform: translate3d(2.5%, 1.5%, 0) scale(1.04);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s var(--realm-ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .realm-aurora-field::after {
+    animation: none;
+  }
+
+  .animate-fade-in-up {
+    animation: none;
+    opacity: 1;
+  }
 }
