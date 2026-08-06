@@ -9,6 +9,11 @@
       "DOM",
       "DOM.Iterable"
     ],
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ],
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "isolatedModules": true,
@@ -22,5 +27,14 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "include": [
+    "src",
+    "vite.config.ts",
+    "replace-colors.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules"
+  ]
 }
