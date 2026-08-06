@@ -1,30 +1,30 @@
 import { useEffect, useRef } from 'react';
 
 const ROW_ONE_VIDEO_IDS = [
-  'xdZV8oLmpLo',
-  'SmRbwBeFAMw',
-  'bqYzyt3E2UE',
-  'gCApP88HaVM',
+  'OEkxiY5zte0',
+  'nbpIBdkXsoE',
+  'pdPtueSL6H0',
+  '7PqC9omdpws',
+  'ADfECgH5su8',
+  'Rp9oB7U4V3U',
+  'T4TZi7PUeoY',
+  'X0wbz_XkN1o',
+  'N1qwkw473D0',
+  'EUptZfzrTBU',
   '1SRsdDk-aSw',
-  '-TqQFaAvD94',
-  '0eNz-FVj6XY',
-  'mfl9gdElOWc',
-  'KHouXX5x9Xc',
-  '3FQYG2ErFMQ',
-  'm2qN2DgpZK0',
 ];
 
 const ROW_TWO_VIDEO_IDS = [
+  'jY43_X14M6Q',
+  '-TqQFaAvD94',
+  '1KlDSvgHu3c',
+  'mfl9gdElOWc',
+  'KHouXX5x9Xc',
+  'm2qN2DgpZK0',
   'uPoNRhhkX_I',
+  'TLybNUkB7ZA',
   'EnjuWflAbx8',
-  'nSOkLKKu53g',
-  'MgJrgh_WcoU',
-  'buNjfftLYfY',
-  'umnjdOIeynk',
-  't4uhZfSTqzM',
-  'O7uPWulb_VI',
-  'F_oUBr1iKx8',
-  'sUbUt_A8ZUY',
+  'z-i4yKSO-mQ',
 ];
 
 const triple = (items: string[]) => [...items, ...items, ...items];
@@ -35,7 +35,7 @@ function ThumbnailRow({ videoIds }: { videoIds: string[] }) {
       {triple(videoIds).map((videoId, index) => (
         <div
           aria-hidden="true"
-          className="h-[270px] w-[420px] flex-shrink-0 overflow-hidden rounded-2xl bg-[#16161a]"
+          className="aspect-[14/9] w-[82vw] max-w-[420px] flex-shrink-0 overflow-hidden rounded-xl bg-[#16161a] sm:h-[270px] sm:w-[420px] sm:rounded-2xl"
           key={`${videoId}-${index}`}
         >
           <img
@@ -84,7 +84,8 @@ export default function ScrollImageMarquee() {
   return (
     <section
       ref={sectionRef}
-      className="w-full overflow-hidden bg-[#0C0C0C] pb-10 pt-24 sm:pt-32 md:pt-40"
+      aria-label="Featured Uebert Angel Jr teachings"
+      className="w-full overflow-hidden bg-[#0C0C0C] pb-8 pt-16 sm:pb-10 sm:pt-24 md:pt-32 lg:pt-40"
     >
       <div className="flex flex-col gap-3">
         <div className="w-full overflow-hidden">
