@@ -1,8 +1,7 @@
 import { motion } from 'motion/react';
 import { ChevronRight } from 'lucide-react';
 import { SKOOL_URL } from '../constants/links';
-
-const PORTRAIT_URL = '/seer-portrait-aurora.png';
+import { SEER_PORTRAIT_URL } from '../constants/media';
 
 export default function PricingSection() {
   return (
@@ -24,27 +23,14 @@ export default function PricingSection() {
           <span className="mt-2 block text-white/76">A Guide Into Deeper Sight</span>
         </motion.h2>
 
-        <figure className="relative isolate aspect-[3/2] w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[4/5] lg:max-h-[760px] lg:justify-self-end">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute -inset-12 -z-10 blur-[64px]"
-            style={{
-              background:
-                'radial-gradient(circle at 62% 50%, rgba(207, 28, 28, 0.34), transparent 68%)',
-            }}
-          />
+        <figure className="portrait-aurora relative isolate aspect-[3/2] w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[4/5] lg:max-h-[760px] lg:justify-self-end">
           <img
-            src={PORTRAIT_URL}
+            src={SEER_PORTRAIT_URL}
             alt="Uebert Angel Jr teaching"
             loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover object-center lg:object-[64%_center]"
-            style={{
-              WebkitMaskImage:
-                'radial-gradient(ellipse 78% 82% at 62% 48%, black 48%, transparent 100%)',
-              maskImage:
-                'radial-gradient(ellipse 78% 82% at 62% 48%, black 48%, transparent 100%)',
-            }}
+            className="portrait-aurora__image absolute inset-0 h-full w-full object-cover object-center lg:object-[64%_center]"
           />
+          <div aria-hidden="true" className="portrait-aurora__wash absolute inset-0" />
         </figure>
 
         <div className="w-full max-w-[700px] lg:col-start-1 lg:row-start-2 lg:self-start">

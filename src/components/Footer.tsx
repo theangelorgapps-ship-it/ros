@@ -38,7 +38,7 @@ export default function Footer() {
             Of Seers
           </a>
           <p className="max-w-[280px] text-sm leading-relaxed text-white/65">
-            The official private community of Uebert Angel Jr — The Seer.
+            The official private community of Uebert Angel Jr, The Seer.
           </p>
         </div>
 

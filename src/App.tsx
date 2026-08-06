@@ -14,7 +14,7 @@ import StatsSection from './components/StatsSection';
 import PricingSection from './components/PricingSection';
 import PartnerSection from './components/PartnerSection';
 import Footer from './components/Footer';
-import LoadingScreen from './components/LoadingScreen';
+import LayoutPreloader from './components/ui/layout-preloader';
 import BackToTopButton from './components/BackToTopButton';
 
 const partnerTrailImages = [
@@ -36,14 +36,14 @@ export default function App() {
   return (
     <>
       <AnimatePresence mode="wait">
-        {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
+        {loading && <LayoutPreloader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
 
       <div
         className="realm-page relative min-h-screen font-sans text-white"
         style={{
           opacity: loading ? 0 : 1,
-          transition: loading ? 'opacity 0.5s ease-out' : 'opacity 0.5s ease-out 0.6s',
+          transition: loading ? 'none' : 'opacity 0.6s ease-out',
         }}
       >
         <div aria-hidden="true" className="realm-aurora-field" />

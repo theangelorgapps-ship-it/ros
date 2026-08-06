@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @theme {
   --color-bg: #000000;
@@ -83,6 +84,69 @@
   filter: blur(64px);
   will-change: transform;
   animation: realm-aurora-drift 18s ease-in-out infinite alternate;
+}
+
+.realm-hero-wash {
+  background:
+    radial-gradient(circle at 68% 42%, rgb(207 28 28 / 0.13) 0%, transparent 34%),
+    linear-gradient(180deg, rgb(5 3 3 / 0.12) 0%, transparent 28%, rgb(5 3 3 / 0.34) 46%, rgb(5 3 3 / 0.82) 68%, rgb(5 3 3 / 0.98) 100%);
+}
+
+.preloader-art-wash {
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 44% 38% at 50% 48%, rgb(0 0 0 / 0.08), rgb(0 0 0 / 0.48) 100%),
+    linear-gradient(180deg, rgb(5 3 3 / 0.34) 0%, transparent 28%, transparent 70%, rgb(5 3 3 / 0.72) 100%);
+}
+
+.preloader-noise {
+  overflow: hidden;
+  pointer-events: none;
+  mix-blend-mode: soft-light;
+}
+
+.preloader-noise::before {
+  position: absolute;
+  inset: -24%;
+  content: "";
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.85'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+  animation: noise-animation 0.3s steps(2) infinite;
+}
+
+.portrait-aurora::before {
+  position: absolute;
+  z-index: -1;
+  inset: -12%;
+  content: "";
+  pointer-events: none;
+  background: radial-gradient(ellipse 62% 58% at 62% 50%, rgb(207 28 28 / 0.42), rgb(207 28 28 / 0.12) 48%, transparent 74%);
+  filter: blur(52px);
+}
+
+.portrait-aurora__image {
+  -webkit-mask-image: radial-gradient(ellipse 90% 88% at 62% 48%, #000 46%, rgb(0 0 0 / 0.88) 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 88% at 62% 48%, #000 46%, rgb(0 0 0 / 0.88) 62%, transparent 100%);
+}
+
+.portrait-aurora__wash {
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 54% 50% at 62% 48%, transparent 48%, rgb(207 28 28 / 0.08) 69%, transparent 88%),
+    linear-gradient(180deg, transparent 62%, rgb(0 0 0 / 0.52) 88%, rgb(0 0 0 / 0.92) 100%);
+  -webkit-mask-image: radial-gradient(ellipse 92% 90% at 62% 48%, #000 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 92% 90% at 62% 48%, #000 50%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .realm-hero-wash {
+    background:
+      linear-gradient(90deg, rgb(5 3 3 / 0.7) 0%, rgb(5 3 3 / 0.42) 36%, transparent 68%),
+      radial-gradient(circle at 70% 42%, rgb(207 28 28 / 0.13) 0%, transparent 34%),
+      linear-gradient(180deg, rgb(5 3 3 / 0.1) 0%, transparent 31%, rgb(5 3 3 / 0.28) 48%, rgb(5 3 3 / 0.8) 70%, rgb(5 3 3 / 0.98) 100%);
+  }
 }
 
 @layer components {
@@ -170,12 +234,52 @@
   }
 }
 
+@keyframes noise-animation {
+  0% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-2%, -3%);
+  }
+  20% {
+    transform: translate(-4%, 2%);
+  }
+  30% {
+    transform: translate(2%, -4%);
+  }
+  40% {
+    transform: translate(-2%, 5%);
+  }
+  50% {
+    transform: translate(-4%, 2%);
+  }
+  60% {
+    transform: translate(3%, 0);
+  }
+  70% {
+    transform: translate(0, 3%);
+  }
+  80% {
+    transform: translate(-3%, 0);
+  }
+  90% {
+    transform: translate(2%, 2%);
+  }
+  100% {
+    transform: translate(1%, 0);
+  }
+}
+
 .animate-fade-in-up {
   animation: fadeInUp 0.7s var(--realm-ease) both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .realm-aurora-field::after {
+    animation: none;
+  }
+
+  .preloader-noise::before {
     animation: none;
   }
 
