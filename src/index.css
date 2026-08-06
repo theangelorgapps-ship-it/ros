@@ -100,3 +100,9 @@ body.realm-section-active .site-header {
   pointer-events: none;
   transform: translateY(-12px) !important;
 }
+
+body.script-section-active .site-header {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(-12px) !important;
+}
