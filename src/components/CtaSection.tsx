@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Video } from 'lucide-react';
+import { Video } from 'lucide-react';
 
 const FEATURE_IMAGE =
   'https://assets.cdn.filesafe.space/BGA1N9Ch7TNCoNH77QrT/media/6a74ce5c6da442d0adbd3f7c.jpg';
@@ -97,7 +97,6 @@ function CommunityCard() {
         className="group mt-3 inline-flex h-[43px] min-w-[122px] items-center justify-center gap-2 rounded-[10px] bg-white px-5 text-[16px] font-medium text-black transition-transform duration-300 hover:-translate-y-1 xl:mt-7 xl:h-16 xl:min-w-[195px] xl:rounded-2xl xl:px-8 xl:text-2xl"
       >
         Join now
-        <ArrowUpRight className="size-5 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
       </a>
     </motion.aside>
   );
@@ -204,9 +203,9 @@ export default function CtaSection() {
               href={JOIN_URL}
               target="_blank"
               rel="noreferrer"
-              className="mt-6 inline-flex h-[54px] w-[225px] items-center justify-center rounded-[10px] bg-white text-[16px] font-medium text-black transition-transform duration-300 hover:-translate-y-1 xl:mt-8"
+              className="-mt-[108px] inline-flex h-[54px] w-[225px] items-center justify-center rounded-[10px] bg-white text-[16px] font-medium text-black transition-transform duration-300 hover:-translate-y-1 md:mt-6 xl:mt-8"
             >
-              Join new community
+              Enter the Realm
             </a>
           </motion.div>
         </div>

@@ -10,7 +10,7 @@ import HeroSection from './components/HeroSection';
 import ScrollImageMarquee from './components/ScrollImageMarquee';
 import PurposeSection from './components/PurposeSection';
 import CtaSection from './components/CtaSection';
-import AboutSection from './components/AboutSection';
+import StatsSection from './components/StatsSection';
 import PricingSection from './components/PricingSection';
 import LogoMarquee from './components/LogoMarquee';
 import ImageSection from './components/ImageSection';
@@ -39,7 +39,7 @@ export default function App() {
         <ScrollImageMarquee />
         <PurposeSection />
         <CtaSection />
-        <AboutSection />
+        <StatsSection />
         <PricingSection />
         <LogoMarquee />
         <ImageSection />
