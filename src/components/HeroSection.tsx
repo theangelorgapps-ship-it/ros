@@ -39,10 +39,10 @@ export default function HeroSection() {
             transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
             className="pointer-events-auto mb-20 ml-5 w-[calc(100%-2.5rem)] max-w-[42rem] sm:mb-24 sm:ml-8 md:mb-24 md:ml-12 lg:mb-28 lg:ml-20"
           >
-            <h1 className="font-playfair text-[clamp(2.7rem,10vw,6.75rem)] font-medium leading-[0.92] tracking-[-0.035em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
+            <h1 className="font-playfair text-[clamp(2.7rem,10vw,6.75rem)] font-semibold leading-[0.92] tracking-[-0.035em] text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.75)]">
               Transmitting the
               <br />
-              <span className="italic">life of Christ</span>
+              <span>life of Christ</span>
             </h1>
 
             <p className="mt-5 max-w-[38rem] text-sm leading-relaxed text-white/80 drop-shadow-[0_2px_12px_rgba(0,0,0,0.9)] sm:text-base md:mt-6 md:text-lg">
@@ -55,7 +55,7 @@ export default function HeroSection() {
                 event.preventDefault();
                 document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="mt-6 inline-flex min-h-11 items-center justify-center rounded-full border border-[#f4d778]/70 bg-gradient-to-r from-[#8b6415] via-[#f2d36c] to-[#9a701c] px-7 py-3 text-sm font-semibold text-black shadow-[0_0_28px_rgba(212,175,55,0.38)] transition duration-300 hover:scale-[1.03] hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f4d778] focus-visible:ring-offset-2 focus-visible:ring-offset-black md:mt-7 md:px-8 md:text-base"
+              className="mt-6 inline-flex min-h-[54px] items-center justify-center rounded-[10px] border border-white bg-white px-7 py-4 text-sm font-medium text-black shadow-[0_10px_30px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-[#cf1c1c] hover:bg-[#cf1c1c] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black md:mt-7 md:px-8 md:text-base"
             >
               Enter the Realm Now
             </a>

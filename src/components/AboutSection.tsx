@@ -111,12 +111,12 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light mb-5 md:mb-8 bg-gradient-to-r from-gray-100 via-gray-300 to-gray-500 bg-clip-text text-transparent py-2 leading-tight tracking-tight"
+            className="font-playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold mb-5 md:mb-8 text-white py-2 leading-tight tracking-tight"
           >
             About Producer Ujay
           </motion.h2>
 
-          <div className="text-gray-100 text-base md:text-[1.15rem] leading-[1.7] md:leading-[1.8] font-normal tracking-wide space-y-5 md:space-y-6">
+          <div className="text-[#c7c7c7] text-base md:text-[1.15rem] leading-[1.7] md:leading-[1.8] font-normal space-y-5 md:space-y-6">
             <TextReveal delay={0.1}>
               <p>
                 Producer Ujay is a remarkable young entrepreneur and YouTube creator on a mission to inspire minds globally. By interviewing the world’s most accomplished millionaires and building a multi-faceted empire including PlutoCat and Influencer Hub, Ujay provides the blueprint for the next generation to win faster and at scale.
@@ -127,7 +127,7 @@ export default function AboutSection() {
               <TextReveal delay={0.2}>
                 <button 
                   onClick={() => setIsExpanded(true)}
-                  className="text-gray-500 hover:text-white transition-colors duration-300 text-sm tracking-wide uppercase mt-2 mb-8 focus:outline-none"
+                  className="text-[#8a8a8a] hover:text-[#cf1c1c] transition-colors duration-300 text-sm tracking-wide uppercase mt-2 mb-8 focus:outline-none"
                 >
                   Read more
                 </button>
@@ -151,7 +151,7 @@ export default function AboutSection() {
 
                 <button 
                   onClick={() => setIsExpanded(false)}
-                  className="text-gray-500 hover:text-white transition-colors duration-300 text-sm tracking-wide uppercase mt-4 mb-8 focus:outline-none block"
+                  className="text-[#8a8a8a] hover:text-[#cf1c1c] transition-colors duration-300 text-sm tracking-wide uppercase mt-4 mb-8 focus:outline-none block"
                 >
                   Read less
                 </button>

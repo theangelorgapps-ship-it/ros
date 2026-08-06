@@ -117,7 +117,7 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease }}
-            className="font-display text-4xl italic text-text/80 md:text-6xl lg:text-7xl"
+            className="font-display text-4xl font-semibold text-text/80 md:text-6xl lg:text-7xl"
           >
             {words[wordIndex]}
           </motion.span>
@@ -137,8 +137,8 @@ export default function LoadingScreen({ onComplete }: { onComplete: () => void }
         <motion.div
           className="h-full origin-left"
           style={{
-            background: 'linear-gradient(90deg, #89AACC 0%, #4E85BF 100%)',
-            boxShadow: '0 0 8px rgba(137, 170, 204, 0.35)',
+            background: 'linear-gradient(90deg, #ffffff 0%, #cf1c1c 100%)',
+            boxShadow: '0 0 8px rgba(207, 28, 28, 0.35)',
           }}
           initial={{ scaleX: 0 }}
           animate={{ scaleX: progress / 100 }}

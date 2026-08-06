@@ -9,7 +9,7 @@ export default function Header() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className="fixed top-5 md:top-6 left-0 right-0 z-50 px-4 md:px-12 pointer-events-none flex justify-center"
     >
-      <nav className="pointer-events-auto flex w-full max-w-[340px] md:w-auto md:max-w-none items-center justify-between md:justify-center gap-0 md:gap-2 p-1.5 rounded-full backdrop-blur-md bg-white/10 border border-white/20 text-gray-200 text-xs sm:text-sm">
+      <nav className="pointer-events-auto flex w-full max-w-[340px] md:w-auto md:max-w-none items-center justify-between md:justify-center gap-0 md:gap-2 p-1.5 rounded-xl backdrop-blur-md bg-black/75 border border-white/15 text-white text-xs sm:text-sm">
         <button 
           onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
           className="flex h-8 w-[82px] shrink-0 items-center justify-center hover:opacity-80 transition-opacity px-2 md:w-auto md:px-3 border-r border-white/20 mr-1 bg-transparent"
