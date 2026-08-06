@@ -46,21 +46,6 @@ function JoinNowLink() {
   );
 }
 
-export function HeroDesktopNavigation() {
-  return (
-    <nav
-      aria-label="Hero navigation"
-      className="mt-3 hidden min-h-16 w-full shrink-0 items-center justify-between rounded-xl bg-[#050303] px-3 text-white min-[560px]:flex md:px-4 xl:px-6"
-    >
-      <BrandLink />
-      <div className="flex items-center justify-center gap-1">
-        <DesktopNavigationLinks />
-      </div>
-      <JoinNowLink />
-    </nav>
-  );
-}
-
 export default function Header() {
   const [isPastHero, setIsPastHero] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -91,11 +76,7 @@ export default function Header() {
 
   return (
     <header
-      className={`site-header pointer-events-none fixed left-0 right-0 top-3 z-50 flex justify-center px-3 transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] sm:top-5 sm:px-4 md:top-6 md:px-8 ${
-        isPastHero
-          ? 'min-[560px]:translate-y-0 min-[560px]:opacity-100'
-          : 'min-[560px]:pointer-events-none min-[560px]:-translate-y-3 min-[560px]:opacity-0'
-      }`}
+      className="site-header pointer-events-none fixed left-0 right-0 top-3 z-50 flex justify-center px-3 sm:top-5 sm:px-4 md:top-6 md:px-8"
     >
       <div className="relative w-full max-w-6xl">
         <motion.nav

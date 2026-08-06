@@ -2,7 +2,6 @@ import { motion } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import { SKOOL_URL } from '../constants/links';
 import { HERO_VIDEO_URL } from '../constants/media';
-import { HeroDesktopNavigation } from './Header';
 
 export default function HeroSection() {
   return (
@@ -63,7 +62,6 @@ export default function HeroSection() {
         </main>
       </motion.div>
       {/* Background Video Frame End */}
-      <HeroDesktopNavigation />
     </div>
   );
 }
