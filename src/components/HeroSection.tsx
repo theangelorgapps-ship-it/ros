@@ -1,7 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import Typewriter from './Typewriter';
-import { ChevronDown } from 'lucide-react';
+import { ArrowUpRight, Check, ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -32,7 +31,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 w-full h-full bg-gradient-to-t from-black/90 from-5% via-black/40 via-50% to-transparent pointer-events-none"></div>
 
         {/* Main Content Area */}
-        <main className="absolute inset-0 z-20 flex h-full w-full items-end pointer-events-none">
+        <main className="absolute inset-0 z-30 flex h-full w-full items-end pointer-events-none">
           <motion.div 
             initial={{ opacity: 0, y: 32, filter: 'blur(10px)' }}
             animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
@@ -55,10 +54,18 @@ export default function HeroSection() {
                 event.preventDefault();
                 document.getElementById('connect')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="mt-6 inline-flex min-h-[54px] items-center justify-center rounded-[10px] border border-white bg-white px-7 py-4 text-sm font-medium text-black shadow-[0_10px_30px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-[#cf1c1c] hover:bg-[#cf1c1c] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black md:mt-7 md:px-8 md:text-base"
+              className="relative z-40 mt-6 inline-flex min-h-[54px] items-center justify-center gap-2.5 rounded-[10px] border border-white bg-white px-7 py-4 text-sm font-medium text-black shadow-[0_10px_30px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-0.5 hover:border-[#cf1c1c] hover:bg-[#cf1c1c] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black md:mt-7 md:px-8 md:text-base"
             >
-              Enter the Realm Now
+              <span>Enter the Realm Now</span>
+              <ArrowUpRight aria-hidden="true" className="h-4 w-4 stroke-[2.25] md:h-[18px] md:w-[18px]" />
             </a>
+
+            <div className="relative z-40 mt-4 flex items-center gap-2 text-xs font-medium text-white/75 sm:text-sm">
+              <span className="inline-flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-white/35 bg-white/10">
+                <Check aria-hidden="true" className="h-3 w-3 stroke-[2.5]" />
+              </span>
+              <span>Private community • Exclusive teachings</span>
+            </div>
           </motion.div>
         </main>
 
@@ -81,7 +88,7 @@ export default function HeroSection() {
         </motion.div>
       </motion.div>
       {/* Background Video Frame End */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 h-40 bg-gradient-to-b from-transparent via-black/85 to-black" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-40 bg-gradient-to-b from-transparent via-black/85 to-black" />
     </div>
   );
 }
