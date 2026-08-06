@@ -94,3 +94,9 @@
     }
   }
 }
+
+body.realm-section-active .site-header {
+  opacity: 0 !important;
+  pointer-events: none;
+  transform: translateY(-12px) !important;
+}

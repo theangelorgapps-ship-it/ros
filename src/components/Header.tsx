@@ -7,7 +7,7 @@ export default function Header() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="pointer-events-none fixed left-0 right-0 top-3 z-50 flex justify-center px-3 sm:top-5 sm:px-4 md:top-6 md:px-12"
+      className="site-header pointer-events-none fixed left-0 right-0 top-3 z-50 flex justify-center px-3 transition-all duration-300 sm:top-5 sm:px-4 md:top-6 md:px-12"
     >
       <nav className="pointer-events-auto flex w-full max-w-[calc(100vw-1.5rem)] items-center justify-between gap-0 rounded-[10px] border border-white/15 bg-black/75 p-1 text-[10px] text-white backdrop-blur-md sm:max-w-[340px] sm:rounded-xl sm:p-1.5 sm:text-sm md:w-auto md:max-w-none md:justify-center md:gap-2">
         <button 
