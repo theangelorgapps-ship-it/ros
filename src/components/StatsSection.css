@@ -3,7 +3,7 @@
   --realm-blue: #cf1c1c;
   --realm-blue-soft: #f06a6a;
   position: relative;
-  z-index: 80;
+  z-index: 1;
   min-height: 100vh;
   scroll-margin-top: 80px;
   padding: clamp(44px, 5vw, 86px) clamp(16px, 3.8vw, 72px) clamp(54px, 5vw, 90px);
