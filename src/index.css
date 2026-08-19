@@ -311,6 +311,10 @@
   padding-block: 0.25rem;
 }
 
+.featured-desktop-grid {
+  display: none;
+}
+
 .featured-mobile-lane {
   overflow: hidden;
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
@@ -363,9 +367,20 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 560px) {
   .featured-mobile-marquee {
     display: none;
+  }
+
+  .featured-desktop-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 768px) {
+  .featured-desktop-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

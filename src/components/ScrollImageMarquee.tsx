@@ -38,7 +38,7 @@ export default function ScrollImageMarquee() {
       aria-label="Featured Uebert Angel Jr teachings"
       className="w-full overflow-hidden px-3 pb-8 pt-16 sm:px-4 sm:pb-10 sm:pt-24 md:px-6 md:pt-32 lg:px-8 lg:pt-40"
     >
-      <div className="featured-mobile-marquee -mx-3 md:hidden">
+      <div className="featured-mobile-marquee -mx-3">
         {MOBILE_LANES.map((lane, laneIndex) => (
           <div
             className={`featured-mobile-lane ${laneIndex === 1 ? 'is-reversed' : ''}`}
@@ -59,7 +59,7 @@ export default function ScrollImageMarquee() {
         ))}
       </div>
 
-      <div className="mx-auto hidden w-full max-w-[1600px] grid-cols-4 gap-3 md:grid">
+      <div className="featured-desktop-grid mx-auto w-full max-w-[1600px] gap-3">
         {FEATURED_VIDEO_IDS.map((videoId) => (
           <TeachingCard key={videoId} videoId={videoId} />
         ))}
