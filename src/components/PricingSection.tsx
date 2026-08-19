@@ -23,7 +23,7 @@ export default function PricingSection() {
           <span className="mt-2 block text-white/76">A Guide Into Deeper Sight</span>
         </motion.h2>
 
-        <figure className="portrait-aurora relative isolate aspect-[3/2] w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[4/5] lg:max-h-[760px] lg:justify-self-end">
+        <figure className="portrait-aurora relative aspect-[3/2] w-full lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:aspect-[4/5] lg:max-h-[760px] lg:justify-self-end">
           <img
             src={SEER_PORTRAIT_URL}
             alt="Uebert Angel Jr teaching"
