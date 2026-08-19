@@ -23,6 +23,10 @@ export default function HeroSection() {
           muted
           playsInline
           preload="auto"
+          onEnded={({ currentTarget }) => {
+            currentTarget.currentTime = 0;
+            void currentTarget.play().catch(() => undefined);
+          }}
           className="absolute inset-0 h-full w-full object-cover object-[55%_center] sm:object-center"
         >
           <source src={HERO_VIDEO_URL} type="video/mp4" />

@@ -148,36 +148,26 @@
 
 .portrait-aurora::before {
   position: absolute;
-  z-index: 0;
-  inset: -18%;
+  z-index: -1;
+  inset: -12%;
   content: "";
   pointer-events: none;
-  background:
-    radial-gradient(ellipse 46% 58% at 65% 48%, rgb(207 28 28 / 0.34), rgb(207 28 28 / 0.1) 48%, transparent 74%),
-    radial-gradient(ellipse 62% 50% at 52% 78%, rgb(116 11 13 / 0.2), transparent 72%);
+  background: radial-gradient(ellipse 62% 58% at 62% 50%, rgb(207 28 28 / 0.42), rgb(207 28 28 / 0.12) 48%, transparent 74%);
   filter: blur(52px);
 }
 
-.portrait-aurora {
-  --portrait-edge-mask: radial-gradient(ellipse 58% 64% at 62% 51%, #000 29%, rgb(0 0 0 / 0.9) 43%, rgb(0 0 0 / 0.42) 61%, transparent 82%);
-}
-
 .portrait-aurora__image {
-  z-index: 1;
-  mix-blend-mode: screen;
-  filter: saturate(0.88) contrast(1.03);
-  -webkit-mask-image: var(--portrait-edge-mask);
-  mask-image: var(--portrait-edge-mask);
+  -webkit-mask-image: radial-gradient(ellipse 90% 88% at 62% 48%, #000 46%, rgb(0 0 0 / 0.88) 62%, transparent 100%);
+  mask-image: radial-gradient(ellipse 90% 88% at 62% 48%, #000 46%, rgb(0 0 0 / 0.88) 62%, transparent 100%);
 }
 
 .portrait-aurora__wash {
-  z-index: 3;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 46% 56% at 64% 48%, transparent 42%, rgb(207 28 28 / 0.1) 70%, transparent 88%),
-    linear-gradient(180deg, transparent 56%, rgb(0 0 0 / 0.18) 78%, rgb(0 0 0 / 0.72) 100%);
-  -webkit-mask-image: var(--portrait-edge-mask);
-  mask-image: var(--portrait-edge-mask);
+    radial-gradient(ellipse 54% 50% at 62% 48%, transparent 48%, rgb(207 28 28 / 0.08) 69%, transparent 88%),
+    linear-gradient(180deg, transparent 62%, rgb(0 0 0 / 0.52) 88%, rgb(0 0 0 / 0.92) 100%);
+  -webkit-mask-image: radial-gradient(ellipse 92% 90% at 62% 48%, #000 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 92% 90% at 62% 48%, #000 50%, transparent 100%);
 }
 
 @media (min-width: 768px) {
