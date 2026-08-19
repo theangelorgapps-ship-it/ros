@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { DotLottieReact, type DotLottie } from '@lottiefiles/dotlottie-react';
-import { useInView } from 'framer-motion';
+import { useInView } from 'motion/react';
 import FadeIn from './FadeIn';
 
 const purposes = [

@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Video } from 'lucide-react';
 import { SKOOL_URL } from '../constants/links';
 

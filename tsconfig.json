@@ -30,8 +30,7 @@
   },
   "include": [
     "src",
-    "vite.config.ts",
-    "replace-colors.ts"
+    "vite.config.ts"
   ],
   "exclude": [
     "dist",
